@@ -3,8 +3,8 @@ Adapted from ViGEm source
 """
 
 from pathlib import Path
-from ctypes import CDLL, POINTER, CFUNCTYPE, c_void_p, c_uint, c_ushort, c_ulong, c_bool, c_ubyte
-from vgamepad.vigem_commons import XUSB_REPORT, DS4_REPORT, DS4_REPORT_EX, VIGEM_TARGET_TYPE
+from ctypes import CDLL, POINTER, WINFUNCTYPE, c_void_p, c_uint, c_ushort, c_ulong, wintypes, c_ubyte
+from vgamepad.api import XUSB_REPORT, DS4_REPORT, DS4_REPORT_EX, VIGEM_TARGET_TYPE
 
 pathClient = Path(__file__).parent.absolute() / "vigem" / "ViGEmClient.dll"
 vigemClient = CDLL(str(pathClient))
@@ -204,7 +204,7 @@ FALSE otherwise.
 """
 vigem_target_is_attached = vigemClient.vigem_target_is_attached
 vigem_target_is_attached.argtypes = (c_void_p, )
-vigem_target_is_attached.restype = c_bool
+vigem_target_is_attached.restype = wintypes.BOOL
 
 """
 Returns the user index of the emulated Xenon device. This value correspondents to the
