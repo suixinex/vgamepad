@@ -26,31 +26,31 @@ Y = vgamepad.XUSB_BUTTON.XUSB_GAMEPAD_Y
 
 def LEFT_TRIGGER(value):
     gamepad.left_trigger(value)
-    # 左扳机轴 value改成0到255之间的整数
+    # 左扳机轴 值为 0 到 255 之间的整数
 def RIGHT_TRIGGER(value):
     gamepad.right_trigger(value)
-    # 右扳机轴 value改成0到255之间的整数
+    # 右扳机轴 值为 0 到 255 之间的整数
 
 def LEFT_JOYSTICK(x_value, y_value):
     gamepad.left_joystick(x_value, y_value)
-    # 左摇杆XY轴  x_values和y_values 改成-32768到32767之间的整数
+    # 左摇杆XY轴 值为 -32768 到 32767 之间的整数
 def RIGHT_JOYSTCIK(x_value, y_value):
     gamepad.right_joystick(x_value, y_value)
-    # 右摇杆XY轴  x_values和y_values 改成-32768到32767之间的整数
+    # 右摇杆XY轴 值为 -32768 到 32767 之间的整数
 
 def LEFT_TRIGGER_FLOAT(value_float):
     gamepad.left_trigger_float(value_float)
-    # 左扳机轴 value改成0.0到1.0之间的浮点值
+    # 左扳机轴 值为 0.0 到 1.0 之间的浮点值
 def RIGHT_TRIGGER_FLOAT(value_float):
     gamepad.right_trigger_float(value_float)
-    # 右扳机轴 value_float改成0.0到1.0之间的浮点值
+    # 右扳机轴 值为 0.0 到 1.0 之间的浮点值
 
 def LEFT_JOYSTICK_FLOAT(x_value_float, y_value_float_float):
     gamepad.left_joystick_float(x_value_float, y_value_float)
-    # 左摇杆XY轴  x_values_float和y_values_float改成-1.0到1.0之间的浮点值
+    # 左摇杆XY轴 值为 -1.0 到 1.0 之间的浮点值
 def RIGHT_JOYSTCIK_FLOAT(x_value_float, y_value_float):
     gamepad.right_joystick_float(x_value_float, y_value_float)
-    # 右摇杆XY轴  x_values_float和y_values_float改成-1.0到1.0之间的浮点值
+    # 右摇杆XY轴 值为 -1.0 到 1.0 之间的浮点值
 
 for a in range(10):
     print('连续按下松开ABXY键')
@@ -88,4 +88,4 @@ for a in range(10):
     gamepad.update()
 del gamepad
 print("虚拟手柄已销毁")
-# 代码段来自：https://www.bilibili.com/opus/888637598382161922
+# 代码修改自：https://www.bilibili.com/opus/888637598382161922

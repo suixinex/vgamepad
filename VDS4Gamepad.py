@@ -30,40 +30,50 @@ CIRCLE   = vgamepad.DS4_BUTTONS.DS4_BUTTON_CIRCLE
 CROSS    = vgamepad.DS4_BUTTONS.DS4_BUTTON_CROSS
 SQUARE   = vgamepad.DS4_BUTTONS.DS4_BUTTON_SQUARE
 
-PS       = vgamepad.DS4_SPECIAL_BUTTONS.DS4_SPECIAL_BUTTON_PS
-TOUCHPAD = vgamepad.DS4_SPECIAL_BUTTONS.DS4_SPECIAL_BUTTON_TOUCHPAD
+PS          = vgamepad.DS4_SPECIAL_BUTTONS.DS4_SPECIAL_BUTTON_PS
+TOUCHPADBTN = vgamepad.DS4_SPECIAL_BUTTONS.DS4_SPECIAL_BUTTON_TOUCHPAD
 
 def LEFT_TRIGGER(value):
     gamepad.left_trigger(value)
-    # 左扳机轴 value改成0到255之间的整数
+    # 左扳机轴 值为 0 到 255 之间的整数
 def RIGHT_TRIGGER(value):
     gamepad.right_trigger(value)
-    # 右扳机轴 value改成0到255之间的整数
+    # 右扳机轴 值为 0 到 255 之间的整数
 
 def LEFT_JOYSTICK(x_value, y_value) :
-    # 左摇杆XY轴 x_values和y_values改成0到255之间的整数
+    # 左摇杆XY轴 值为 0 到 255 之间的整数
     gamepad.left_joystick(x_value, -y_value)
     # DS4手柄摇杆Y轴和XBOX360摇杆Y轴参数是相反的 所以设置成相反参数 -y_value
 def RIGHT_JOYSTCIK(x_value, y_value):
-    # 右摇杆XY轴 x_values和y_values改成0到255之间的整数
+    # 右摇杆XY轴 值为 0 到 255 之间的整数
     gamepad.right_joystick(x_value, -y_value)
     # DS4手柄摇杆Y轴和XBOX360摇杆Y轴参数是相反的 所以设置成相反参数 -y_value
 
 def LEFT_TRIGGER_FLOAT(value_float):
     gamepad.left_trigger_float(value_float)
-    # 左扳机轴 value_float改成0.0到1.0之间的浮点值
+    # 左扳机轴 值为 0.0 到 1.0 之间的浮点值
 def RIGHT_TRIGGER_FLOAT(value_float):
     gamepad.right_trigger_float(value_float)
-    # 右扳机轴 value_float改成0.0到1.0之间的浮点值
+    # 右扳机轴 值为 0.0 到 1.0 之间的浮点值
 
 def LEFT_JOYSTICK_FLOAT(x_value_float, y_value_float):
-    # 左摇杆XY轴 x_values_float和y_values_float改成-1.0到1.0之间的浮点值
+    # 左摇杆XY轴 值为 -1.0 到 1.0 之间的浮点值
     gamepad.left_joystick_float(x_value_float, -y_value_float)
     # DS4手柄摇杆Y轴和XBOX360摇杆Y轴参数是相反的 所以设置成相反参数 -y_value_float
 def RIGHT_JOYSTCIK_FLOAT(x_value, y_value):
-    # 右摇杆XY轴 x_values_float和y_values_float改成-1.0到1.0之间的浮点值
+    # 右摇杆XY轴 值为 -1.0 到 1.0 之间的浮点值
     gamepad.right_joystick_float(x_value_float, -y_value_float)
     # DS4手柄摇杆Y轴和XBOX360摇杆Y轴参数是相反的 所以设置成相反参数 -y_value_float
+
+def ACCELEROMETER(x_value, y_value, z_value) :
+    gamepad.accelerometer(x_value, y_value, z_value)
+    # 加速度计 值为 -32768 到 32767 之间的整数
+def GYROSCOPE(x_value, y_value, z_value):
+    gamepad.gyroscope(x_value, y_value, z_value)
+    # 陀螺仪 值为 -32768 到 32767 之间的整数
+def TOUCHPAD(finger1, finger2):
+    gamepad.touchpad(finger1, finger2)
+    # 触摸板 x 值为 0 到 1919 之间, y 值为 0 到 941 之间的整数, (0, 0) 为左上角, (1919, 941) 为右下角
 
 for a in range(10):
     print('连续按下松开交叉圈圈方块三角键')
@@ -106,4 +116,4 @@ for a in range(10):
     gamepad.update()
 del gamepad
 print("虚拟手柄已销毁")
-# 代码段来自：https://www.bilibili.com/opus/888637598382161922
+# 代码段修改自：https://www.bilibili.com/opus/888637598382161922
